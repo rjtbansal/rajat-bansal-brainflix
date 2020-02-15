@@ -47,7 +47,7 @@ class VideoList extends React.Component {
                     id: '4', 
                     title: 'Cheap Airline Tickets Great Ways To Save', 
                     channel: 'Emily Harper', 
-                    image: {videoImage4} 
+                    image: videoImage4 
                 },
                 {
                     id: '5', 
@@ -78,8 +78,9 @@ class VideoList extends React.Component {
     }
     render() {
         return (
-                   this.state.videos.map( 
-                       //video => console.log(video)
+                   this.state.videos
+                   .filter(video => video.id !== '0') //avoiding first video from side videos
+                   .map( 
                     video => <Video video={video} />
                    )
         );
