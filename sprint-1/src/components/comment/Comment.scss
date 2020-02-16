@@ -1,0 +1,33 @@
+.comment {
+
+    border-top: 2px solid lightgray;
+    padding-top: 1rem;
+    &__subdiv {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-author {
+
+        &__image {
+        border-radius: 3rem;
+        width: 3rem;
+        height: 3rem;
+        background: #E1E1E1;
+        }
+
+        &__name {
+            position: absolute;
+            left: 5rem;
+        }
+    }
+
+    &-timestamp {
+        color: #AFAFAF;
+    }
+
+    &-text {
+        margin-left: 4rem;
+        margin-top: 0;
+    }
+}

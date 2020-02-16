@@ -1,3 +1,7 @@
+textarea::placeholder{
+    font-family: "Linotype";
+}
+
 .author-image {
     width: 4rem;
     height: 4rem;
@@ -17,6 +21,7 @@
         border-radius: 5px;
         width: 100%;
         resize: none;
+        padding: 1rem;
     }
      
     &__submit-button {
@@ -35,6 +40,5 @@
 .comment-form-div {
     display: flex;
     margin-right: 1rem;
-    border-bottom: 1.5px solid lightgray;
     padding-bottom: 1.8rem;
 }
