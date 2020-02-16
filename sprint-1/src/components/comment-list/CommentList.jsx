@@ -6,7 +6,7 @@ const CommentList = (props) => {
     return(
         <section>
             <h2>{props.comments.length} Comments </h2>
-            {/* <CommentForm /> */}
+            <CommentForm />
             {
                props.comments.map(comment => <Comment comment={comment} />)
             }
