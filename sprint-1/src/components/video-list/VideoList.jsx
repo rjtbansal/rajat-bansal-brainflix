@@ -12,6 +12,7 @@ import videoImage7 from '../../assets/Images/video-list-7.jpg';
 import videoImage8 from '../../assets/Images/video-list-8.jpg';
 
 import Video from '../video/Video';
+import MainVideo from '../main-video/MainVideo';
 
 class VideoList extends React.Component {
 
@@ -78,11 +79,24 @@ class VideoList extends React.Component {
     }
     render() {
         return (
-                   this.state.videos
-                   .filter(video => video.id !== '0') //avoiding first video from side videos
-                   .map( 
-                    video => <Video video={video} />
-                   )
+                <>
+                    <div className = "main">
+                        {
+                            this.state.videos
+                                       .filter(video => video.id === '0')
+                                       .map( video => <MainVideo video= {video} /> ) 
+                        }
+                    </div>
+                    <div className="side-videos">
+                    {
+                    this.state.videos
+                    .filter(video => video.id !== '0') //avoiding first video from side videos
+                    .map( 
+                        video => <Video video={video} />
+                    )
+                    }
+                    </div>
+                </>
         );
     }
 }
