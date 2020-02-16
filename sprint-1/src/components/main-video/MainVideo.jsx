@@ -1,6 +1,9 @@
 import React from 'react';
 import './MainVideo.scss';
 import CommentList from '../comment-list/CommentList';
+import playButtonIcon from '../../assets/Icons/SVG/Icon-play.svg';
+import fullScreenButtonIcon from '../../assets/Icons/SVG/Icon-fullscreen.svg';
+import volumeIcon from '../../assets/Icons/SVG/Icon-volume.svg';
 
 const MainVideo = props => {
 
@@ -58,16 +61,27 @@ const MainVideo = props => {
 
     return (
         <section className="main__video">
-                <img className="main__video--image" src={mainVideo.image} alt={`Video: ${mainVideo.id}`} />
-                <h1> {mainVideo.title} </h1>
-                <h2> By {mainVideo.channel} </h2>
-                <p> {mainVideo.timestamp} </p>
-                <p> {mainVideo.views} </p>
-                <p> {mainVideo.likes} </p>
-                <p> {mainVideo.description} </p>
-                {/* add CommentList component reference here */}
-                <CommentList comments={mainVideo.comments} />
-            </section>
+            <video className="main__video--image" poster={mainVideo.image}>
+            </video>
+            <div className="main__video--controls">
+                <img className="main__video--icon" src={playButtonIcon}  alt="play-button"/>
+                <div className="hr-background">
+                    <hr className = "main__video--scroll"/>
+                </div>
+                <div className="main__video--icon">
+                    <img className="main__video--rightIcon" src={fullScreenButtonIcon}  alt="play-button"/>
+                    <img className="main__video--rightIcon" src={volumeIcon}  alt="play-button"/>
+                </div>
+            </div>
+            <h1> {mainVideo.title} </h1>
+            <h2> By {mainVideo.channel} </h2>
+            <p> {mainVideo.timestamp} </p>
+            <p> {mainVideo.views} </p>
+            <p> {mainVideo.likes} </p>
+            <p> {mainVideo.description} </p>
+            {/* add CommentList component reference here */}
+            <CommentList comments={mainVideo.comments} />
+        </section>
     );
 }
 
