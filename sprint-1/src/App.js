@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import Header from './components/header/Header';
 import VideoList from './components/video-list/VideoList';
+import './styles/styles.scss';
 
 
 function App() {
