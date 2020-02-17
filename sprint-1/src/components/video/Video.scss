@@ -1,3 +1,5 @@
+@import '../../styles/mixins';
+
 .video {
 
     display: flex;
@@ -17,5 +19,10 @@
         &--title {
             margin-bottom: 0;
         }
+
+        @include tablet {
+            width: 20%;
+        }
+
     }
 }

@@ -1,7 +1,13 @@
+@import '../../styles/mixins';
+
 .side-videos{
 
     &__heading { 
         color: #AFAFAF;
         margin-left: 1rem;
+
+        @include tablet {
+            margin-top: 2rem;
+        }
     }
 }
