@@ -69,6 +69,7 @@ const MainVideo = props => {
                 <img className="main__video--icon" src={playButtonIcon}  alt="play-button"/>
                 <div className="hr-background">
                     <hr className = "main__video--scroll"/>
+                    <span className="hr-background__timer">0:00/0:42</span>
                 </div>
                 <div className="main__video--icon">
                     <img className="main__video--rightIcon" src={fullScreenButtonIcon}  alt="play-button"/>
