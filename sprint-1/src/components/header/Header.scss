@@ -37,6 +37,11 @@
             left: 3rem;
             height: 3rem;
         }
+
+        @include desktop {
+            left: 12rem;
+        }
+
      }
 
      &__div {
@@ -84,5 +89,7 @@
          justify-content: space-around;
          align-items: center;
          margin-top: 1rem;
-     }     
+     }    
+     
+     
 }
