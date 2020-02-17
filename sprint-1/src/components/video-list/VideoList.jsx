@@ -88,6 +88,7 @@ class VideoList extends React.Component {
                         }
                     </div>
                     <div className="side-videos">
+                     <h4 className="side-videos__heading">NEXT VIDEO</h4>
                     {
                     this.state.videos
                     .filter(video => video.id !== '0') //avoiding first video from side videos

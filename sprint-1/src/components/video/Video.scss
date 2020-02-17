@@ -1,5 +1,21 @@
 .video {
+
+    display: flex;
+    margin-left: 1rem;
+    align-items: center; 
+
     &__image {
-        width: 20rem;
+        width: 7.5rem;
+        height: 4.375rem;
+        border-radius: 5px;
+    }
+
+    &__info {
+        margin-left: 1rem;
+        width: 40%;
+
+        &--title {
+            margin-bottom: 0;
+        }
     }
 }
