@@ -1,5 +1,11 @@
 @import '../../styles/mixins';
 
+.main-parent {
+
+    @include desktop {
+        display: flex;
+    }
+}
 .side-videos{
 
     &__heading { 

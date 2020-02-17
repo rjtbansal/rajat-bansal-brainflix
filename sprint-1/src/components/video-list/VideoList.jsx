@@ -79,7 +79,7 @@ class VideoList extends React.Component {
     }
     render() {
         return (
-                <>
+                <div className="main-parent">
                     <div className = "main">
                         {
                             this.state.videos
@@ -97,7 +97,7 @@ class VideoList extends React.Component {
                     )
                     }
                     </div>
-                </>
+                </div>
         );
     }
 }
