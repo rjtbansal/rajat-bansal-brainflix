@@ -1,5 +1,15 @@
-.comments__displayed {
-    margin-right: 1rem;
-    padding-top: 1rem;
-    border-bottom: 2px solid lightgray;
+@import '../../styles/mixins';
+.comments {
+
+    &__displayed{
+        margin-right: 1rem;
+        padding-top: 1rem;
+        border-bottom: 2px solid lightgray;
+    }
+
+    &__count{
+        @include tablet {
+            font-size: 1rem;
+        }
+    }
 }

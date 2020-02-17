@@ -6,7 +6,7 @@ const CommentForm = () => {
     return (
         <div className="comment-form-div">
             <img className="author-image" src={profilePic} alt="mohan-muruge" />
-            <form id="comment_form" action="" className="form">
+            <form  action="" className="form">
                 <div className="form__div">
                     <label htmlFor="comment" className="form__label">JOIN THE CONVERSATION</label>
                     <textarea className="form__textarea" name="comment" placeholder="Write comment here" id="comment" cols="30" rows="6" required></textarea>

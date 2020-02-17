@@ -6,7 +6,7 @@ import './CommentList.scss'
 const CommentList = (props) => {
     return(
         <section>
-            <h2>{props.comments.length} Comments </h2>
+            <h2 className="comments__count">{props.comments.length} Comments </h2>
             <CommentForm />
             <div className="comments__displayed">
             {
