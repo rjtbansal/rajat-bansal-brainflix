@@ -1,0 +1,95 @@
+
+@import '../../styles/mixins';
+
+
+.header {
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    &__logo{
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        @include tablet {
+            padding-top: unset;
+            padding-bottom: unset;
+        }
+    }
+
+     &__search {
+        background-image: url(../../assets/Icons/SVG/Icon-search.svg);
+        background-repeat: no-repeat;
+        background-position: 1rem;
+        background-color: #FAFAFA;
+        padding: 1rem 0 1rem 2.5rem ;
+        border-radius: 0.5rem;
+        border: 1px solid lightgray;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        @include tablet {
+            margin-left: 0;
+            margin-right: 0;
+            width: 30%;
+            position: relative;
+            left: 3rem;
+            height: 3rem;
+        }
+
+        @include desktop {
+            left: 12rem;
+        }
+
+     }
+
+     &__div {
+        display: flex;
+        margin-top: 1rem;
+        width: 100%;
+
+        @include tablet {
+            margin-top: unset;
+            justify-content: unset;
+            width: unset;
+        }
+    }
+
+     &__uploadBtn { 
+        background-image: url(../../assets/Icons/SVG/Icon-upload.svg);
+        background-repeat: no-repeat;
+        background-position: 30%;
+        background-color: #0095FF;
+        color: white;
+        width: 100%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border-radius: 0.5rem;
+        border-style: none;
+        font-weight: bold;
+
+        @include tablet {
+            width: 8rem;
+            background-position: 10%;
+            height: 3.5rem;
+            align-self: center;
+        }
+     }
+
+     &__profileImg {
+         width: 4rem;
+         height: 4rem;
+         border-radius: 4rem;
+         margin-right: 1rem;
+     }
+
+     @include tablet {
+         flex-direction: row;
+         justify-content: space-around;
+         align-items: center;
+         margin-top: 1rem;
+     }    
+     
+     
+}
