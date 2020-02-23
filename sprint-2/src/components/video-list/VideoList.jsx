@@ -23,14 +23,14 @@ class VideoList extends React.Component {
         return axios.get(this.getVideosUrl);
     }
 
-    getMainVideo = () => {
-        return axios.get(this.getDefaultMainVideoUrl);
+    getMainVideoUrl = id => `https://project-2-api.herokuapp.com/videos/${id}?api_key=${this.apiKey}`
+
+    getMainVideo = (id) => {
+        return axios.get(this.getMainVideoUrl(id));
     }
 
     componentDidMount() {
-        console.log('executed componentDidMount');
-
-        axios.all([this.getAllVideos(), this.getMainVideo()])
+        axios.all([this.getAllVideos(), this.getMainVideo(this.defaultMainVideoId)])
              .then(axios.spread((allVideosRes, mainVideoRes) => {
                 this.setState({
                     videos: allVideosRes.data,
@@ -39,10 +39,20 @@ class VideoList extends React.Component {
              }));
     }
 
+    componentDidUpdate() {
+        const videoId = this.props.match.params.id;
+        videoId && this.getMainVideo(videoId)
+                        .then((mainVideoRes) => {
+                            this.setState({
+                                mainVideo: mainVideoRes.data
+                            })
+                        });
+        
+    }
+
 
     render() {           
         if(!this.state.mainVideo.length && !this.state.videos.length){
-            console.log('data not loaded yet entirely')
             return(
                 <h2>Loading data.....Please wait</h2>
             );
@@ -50,14 +60,13 @@ class VideoList extends React.Component {
         return (
                 <>
                     <div className = "main">
-                        {console.log(this.state.mainVideo)}
                         <MainVideo video = {this.state.mainVideo} />
                     </div>
                     <div className="side-videos">
                      <h4 className="side-videos__heading">NEXT VIDEO</h4>
                     {
                     this.state.videos
-                    .filter(video => video.id !== '1af0jruup5gu') //avoiding first video from side videos
+                    .filter(video => video.id !== (this.props.match.params.id || this.defaultMainVideoId)) //avoiding first video from side videos
                     .map( 
                         video => <Video video={video} />
                     )

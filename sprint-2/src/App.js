@@ -11,6 +11,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/upload" component = {UploadVideo} />
+         <Route path="/videos/:id" component = {VideoList} />
         <Route exact path="/" component = {VideoList} />
       </Switch>
     </BrowserRouter>  
