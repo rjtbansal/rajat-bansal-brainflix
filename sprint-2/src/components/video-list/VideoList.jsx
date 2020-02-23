@@ -30,6 +30,7 @@ class VideoList extends React.Component {
     }
 
     componentDidMount() {
+        console.log('component did mount')
         axios.all([this.getAllVideos(), this.getMainVideo(this.defaultMainVideoId)])
              .then(axios.spread((allVideosRes, mainVideoRes) => {
                 this.setState({
@@ -41,17 +42,19 @@ class VideoList extends React.Component {
 
     componentDidUpdate() {
         const videoId = this.props.match.params.id;
-        videoId && this.getMainVideo(videoId)
+        
+        //ensure that previous state id for mainVideo isnt matching with current video id. Without this check componentDidUpdate gets called infinitely
+        (this.state.mainVideo.id !== videoId) && videoId && this.getMainVideo(videoId)
                         .then((mainVideoRes) => {
                             this.setState({
                                 mainVideo: mainVideoRes.data
                             })
                         });
-        
     }
+    
 
-
-    render() {           
+    render() {  
+        console.log('calling render');         
         if(!this.state.mainVideo.length && !this.state.videos.length){
             return(
                 <h2>Loading data.....Please wait</h2>
