@@ -75,6 +75,7 @@
         border-style: none;
         font-weight: bold;
         text-decoration: none;
+        cursor: pointer;
         @include tablet {
             width: 8rem;
             background-position: 10%;

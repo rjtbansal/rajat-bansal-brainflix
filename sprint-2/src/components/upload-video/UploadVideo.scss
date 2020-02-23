@@ -11,12 +11,38 @@
         border-top: none;
     }
 
+    &__mainDiv {
+       
+        @include desktop{
+            display: flex;
+        }
+    }
+
+    &__thumbnailDiv {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            margin-right: 1.5rem;
+        }
+    }
+    
+
     &__thumbnail {
         height: 12rem;
         margin-bottom: 2rem;
 
         @include tablet {
             width: 21.5rem;
+        }
+    }
+
+    &__detailsDiv {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            width: 100%;
         }
     }
 
@@ -99,5 +125,9 @@
             flex-direction: row-reverse;
             
         }
+    }
+
+    &__textInput {
+        background-color: #FAFAFA;
     }
 }
