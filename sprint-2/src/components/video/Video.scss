@@ -2,9 +2,14 @@
 
 .video {
 
-    display: flex;
+    
     margin-left: 1rem;
-    align-items: center; 
+    
+    &__link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
 
     &__image {
         width: 7.5rem;
