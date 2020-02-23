@@ -63,7 +63,7 @@ class VideoList extends React.Component {
         return (
                 <>
                     <div className = "main">
-                        <MainVideo video = {this.state.mainVideo} />
+                        <MainVideo key={this.state.mainVideo.id} video = {this.state.mainVideo} />
                     </div>
                     <div className="side-videos">
                      <h4 className="side-videos__heading">NEXT VIDEO</h4>
@@ -71,7 +71,7 @@ class VideoList extends React.Component {
                     this.state.videos
                     .filter(video => video.id !== (this.props.match.params.id || this.defaultMainVideoId)) //avoiding first video from side videos
                     .map( 
-                        video => <Video video={video} />
+                        video => <Video key={video.id} video={video} />
                     )
                     }
                     </div>

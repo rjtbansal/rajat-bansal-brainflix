@@ -10,7 +10,7 @@ const CommentList = (props) => {
             <CommentForm />
             <div className="comments__displayed">
             {
-               props.comments.map(comment => <Comment comment={comment} />)
+               props.comments.map(comment => <Comment key={comment.id} comment={comment} />)
             }
             </div>
         </section>
