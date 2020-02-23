@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <header className="header">  
         {/* Link styling messed up in mobile mode */}
-            <Link to="/">
+            <Link to="/" style={{ textDecoration: 'none' }}>
                 <img className="header__logo" src={logo} alt="Brainflix-Logo"/>
             </Link>
             <input type="text" className="header__search" placeholder="Search" />

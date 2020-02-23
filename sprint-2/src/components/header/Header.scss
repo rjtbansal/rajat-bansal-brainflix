@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    align-items: center;
 
     &__logo{
         padding-top: 1.5rem;
@@ -26,8 +27,9 @@
         padding: 1rem 0 1rem 2.5rem ;
         border-radius: 0.5rem;
         border: 1px solid lightgray;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        align-self: stretch;
+        margin-left: 2rem;
+        margin-right: 3rem;
 
         @include tablet {
             margin-left: 0;
@@ -36,6 +38,7 @@
             position: relative;
             left: 3rem;
             height: 3rem;
+            align-self: center;
         }
 
         @include desktop {
@@ -48,6 +51,8 @@
         display: flex;
         margin-top: 1rem;
         width: 100%;
+        justify-content: center;
+        align-items: center;
 
         @include tablet {
             margin-top: unset;
@@ -62,13 +67,13 @@
         background-position: 30%;
         background-color: #0095FF;
         color: white;
-        width: 100%;
-        margin-left: 1rem;
+        width: 20rem;
+        height: 4rem;
         margin-right: 1rem;
         border-radius: 0.5rem;
         border-style: none;
         font-weight: bold;
-
+        text-decoration: none;
         @include tablet {
             width: 8rem;
             background-position: 10%;
