@@ -16,9 +16,11 @@ const UploadVideo = () => {
 
             <label htmlFor="video-description" className="video-upload__label">ADD A VIDEO DESCRIPTION</label>
             <textarea cols="30" rows="6" type="text" className="video-upload__videoDescription" name="video-description" placeholder="Add a description of your video" />
-
-            <button className="video-upload__publishBtn">PUBLISH</button>
-            <button className="video-upload__cancelBtn">CANCEL</button>
+            <div className="video-upload__borderDiv"></div>
+            <div className = "video-upload__buttons">
+                <button className="video-upload__publishBtn">PUBLISH</button>
+                <button className="video-upload__cancelBtn">CANCEL</button>
+            </div>
         </section>
     );
 }

@@ -1,15 +1,32 @@
+@import '../../styles/mixins';
+
 .video-upload {
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
     margin-right: 2rem;
+    border-top: 1px solid lightgray;
+
+    @include tablet {
+        border-top: none;
+    }
+
     &__thumbnail {
         height: 12rem;
         margin-bottom: 2rem;
+
+        @include tablet {
+            width: 21.5rem;
+        }
     }
 
     &__title {
         margin-bottom: 2rem;
+
+        @include tablet {
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 1rem;
+        }
     }
 
     &__label {
@@ -31,6 +48,7 @@
         border-radius: 5px;
         resize: none;
         padding: 1rem;
+
     }
 
     &__publishBtn {
@@ -43,6 +61,11 @@
         border-style: none;
         margin-bottom: 1rem;
         font-weight: bold;
+
+        @include tablet {
+            margin-top: 1rem;
+            width: 10rem;
+        }
        
     }
 
@@ -52,5 +75,29 @@
         background-color: white;
         padding-bottom: 1rem;
         font-weight: bold;
+
+        @include tablet {
+            margin-right: 3rem;
+            padding-bottom: unset;
+        }    
+    }
+
+    &__borderDiv {
+
+        @include tablet {
+            border-bottom: 1px solid lightgray;
+            margin-bottom: 1rem;
+        }
+        
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row-reverse;
+            
+        }
     }
 }
