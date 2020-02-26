@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'fonts'; 
+@import 'mixins';
+@import 'typography';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Linotype';
+}
+
+textarea::placeholder{
+    font-family: "Linotype";
+}

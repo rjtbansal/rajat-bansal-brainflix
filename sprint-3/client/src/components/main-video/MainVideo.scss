@@ -1,0 +1,118 @@
+@import '../../styles/mixins';
+
+.main {
+    &__video {
+
+        &--image {
+            object-fit: cover;
+            height: 15rem;
+            width: 100%;
+
+            @include tablet {
+                height: 25rem;
+                object-fit: contain;
+                background-color: black;
+            }
+        }
+
+        &--controls {
+            position: relative;
+            bottom: 3.2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        &--icon {
+            background-color: rgba(0,0,0,0.50);
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        &--scroll {
+            width: 8rem;
+            height: 2px;
+            border: 2px solid black;
+
+            @include tablet {
+                width: 27rem;
+                margin-right: 1rem;
+            }
+        }
+
+        &--rightIcon {
+            margin-right: 10px;
+        }
+
+        &--details {
+            margin-left: 1rem;
+        }
+
+        &--subdiv {
+            display: flex;
+            width: 100%;
+        }
+
+        &--timestamp {
+            color: #AFAFAF;
+            font-size: 1em;
+            margin-left: 1rem;
+        }
+
+        &--author {
+            font-size: 1.2em;
+        }
+
+        &--description{
+            border-top: 1.5px solid lightgray;
+            padding-top: 0.625rem;
+            margin-right: 1rem;
+
+            @include tablet {
+               padding-top: 2rem;
+               width: 70%;
+               padding-bottom: 2rem;
+            }
+        }
+
+        &--figures {
+            font-size: 1rem;
+            margin-left: 5px;
+        }
+
+       &--div {
+           @include tablet {
+               display: flex;
+               justify-content: space-between;
+           }
+       }
+    }
+}
+
+.hr-background{
+    background-color: rgba(0,0,0,0.50);
+    padding: 8px 16px;
+    align-self: center;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    
+
+    &__timer {
+        display: none;
+
+        
+        @include tablet {
+            display: block;
+            color: white;
+        }
+    }
+
+    @include tablet {
+        display: flex;
+    }
+}
+
+.likes-icon {
+    margin-left: 2rem;
+}
+

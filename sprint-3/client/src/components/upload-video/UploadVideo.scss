@@ -1,0 +1,133 @@
+@import '../../styles/mixins';
+
+.video-upload {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-top: 1px solid lightgray;
+
+    @include tablet {
+        border-top: none;
+    }
+
+    &__mainDiv {
+       
+        @include desktop{
+            display: flex;
+        }
+    }
+
+    &__thumbnailDiv {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            margin-right: 1.5rem;
+        }
+    }
+    
+
+    &__thumbnail {
+        height: 12rem;
+        margin-bottom: 2rem;
+
+        @include tablet {
+            width: 21.5rem;
+        }
+    }
+
+    &__detailsDiv {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+
+        @include tablet {
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__label {
+        color: #AFAFAF;
+        font-weight: bold;
+    }
+
+    &__videoTitle {
+        margin-bottom: 1.5rem;
+        border-radius: 5px;
+        padding-left: 1rem;
+        height: 3rem;
+        border: 1px solid rgb(169, 169, 169)
+    }
+
+    &__videoDescription{
+        margin-bottom: 2rem;
+        outline: none;
+        border-radius: 5px;
+        resize: none;
+        padding: 1rem;
+
+    }
+
+    &__publishBtn {
+        background-color: #0095FF;
+        color: white;
+        text-transform: uppercase;
+        height: 3rem;
+        width: 100%;
+        border-radius: 5px;
+        border-style: none;
+        margin-bottom: 1rem;
+        font-weight: bold;
+
+        @include tablet {
+            margin-top: 1rem;
+            width: 10rem;
+        }
+       
+    }
+
+    &__cancelBtn {
+        color: #0095FF;
+        border-style: none;
+        background-color: white;
+        padding-bottom: 1rem;
+        font-weight: bold;
+
+        @include tablet {
+            margin-right: 3rem;
+            padding-bottom: unset;
+        }    
+    }
+
+    &__borderDiv {
+
+        @include tablet {
+            border-bottom: 1px solid lightgray;
+            margin-bottom: 1rem;
+        }
+        
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row-reverse;
+            
+        }
+    }
+
+    &__textInput {
+        background-color: #FAFAFA;
+    }
+}
