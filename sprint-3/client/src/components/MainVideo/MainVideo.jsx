@@ -1,6 +1,6 @@
 import React from 'react';
 import './MainVideo.scss';
-import CommentList from '../comment-list/CommentList';
+import CommentList from '../CommentList/CommentList';
 import playButtonIcon from '../../assets/Icons/SVG/Icon-play.svg';
 import fullScreenButtonIcon from '../../assets/Icons/SVG/Icon-fullscreen.svg';
 import volumeIcon from '../../assets/Icons/SVG/Icon-volume.svg';

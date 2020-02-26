@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from './components/header/Header';
-import VideoList from './components/video-list/VideoList';
+import Header from './components/Header/Header';
+import VideoList from './components/VideoList/VideoList';
 import './styles/styles.scss';
-import UploadVideo from './components/upload-video/UploadVideo';
+import UploadVideo from './components/UploadVideo/UploadVideo';
 
 function App() {
   return (

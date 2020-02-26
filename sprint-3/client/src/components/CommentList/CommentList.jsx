@@ -1,6 +1,6 @@
 import React from 'react';
-import CommentForm from '../comment-form/CommentForm';
-import Comment from '../comment/Comment';
+import CommentForm from '../CommentForm/CommentForm';
+import Comment from '../Comment/Comment';
 import './CommentList.scss'
 
 const CommentList = (props) => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './VideoList.scss';
-import Video from '../video/Video';
-import MainVideo from '../main-video/MainVideo';
+import Video from '../Video/Video';
+import MainVideo from '../MainVideo/MainVideo';
 
 class VideoList extends React.Component {
 
