@@ -6,10 +6,9 @@ import MainVideo from '../MainVideo/MainVideo';
 
 class VideoList extends React.Component {
 
-    apiKey = "05af670b-f6c4-4da8-b8a8-8346769bdabd";
-    getVideosUrl = `https://project-2-api.herokuapp.com/videos?api_key=${this.apiKey}`;
+    getVideosUrl = 'http://localhost:8080/videos';
     defaultMainVideoId = "1af0jruup5gu";
-    getDefaultMainVideoUrl = `https://project-2-api.herokuapp.com/videos/${this.defaultMainVideoId}?api_key=${this.apiKey}`;
+    getDefaultMainVideoUrl = `http://localhost:8080/videos/${this.defaultMainVideoId}`;
 
     state = {
         videos: [
@@ -19,15 +18,12 @@ class VideoList extends React.Component {
         }
     };
 
-    getAllVideos = () => {
-        return axios.get(this.getVideosUrl);
-    }
+    getAllVideos = () =>  axios.get(this.getVideosUrl);
+    
+    getMainVideoUrl = id => `http://localhost:8080/videos/${id}`;
 
-    getMainVideoUrl = id => `https://project-2-api.herokuapp.com/videos/${id}?api_key=${this.apiKey}`
-
-    getMainVideo = (id) => {
-        return axios.get(this.getMainVideoUrl(id));
-    }
+    getMainVideo = (id) =>  axios.get(this.getMainVideoUrl(id));
+   
 
     componentDidMount() {
         axios.all([this.getAllVideos(), this.getMainVideo(this.defaultMainVideoId)])
