@@ -9,9 +9,28 @@ router.get('/videos', (req, res) => {
 });
 
 router.post('/videos', (req, res) => {
-    let finalResp = req.body;
+    //seperate out variables to push relevant properties to main and side videos
+    const finalResp = req.body;    
     finalResp.id = uuid();
-    res.json(finalResp);
+    //hardcoding main video details not available in upload form
+    finalResp.channel = "Rajat B";
+    finalResp.views = "200";
+    finalResp.likes = "300,000";
+    finalResp.duration = "4:01";
+    finalResp.timestamp = new Date().toLocaleDateString();
+    //lazy way to hardcode comments since they are all same
+    finalResp.comments = mainVideoData[0].comments;
+    mainVideoData.push(finalResp);
+
+    const sideVideoData = {
+        id: finalResp.id,
+        title: finalResp.title,
+        description: finalResp.description,
+        channel: finalResp.channel,
+        image: finalResp.image
+    }
+    sideVideosData.push(sideVideoData);
+    res.status(201).send('Data Added Successfully');
 });
 
 router.get('/videos/:id', (req,res) => {
