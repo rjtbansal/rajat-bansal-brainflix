@@ -45,6 +45,11 @@
 
         &--details {
             margin-left: 1rem;
+
+            @include desktop {
+                width: 80%;
+                margin-left: 5rem;
+            }
         }
 
         &--subdiv {
@@ -83,6 +88,12 @@
            @include tablet {
                display: flex;
                justify-content: space-between;
+           }
+       }
+
+       &--title {
+           @include desktop {
+               margin-top: 0;
            }
        }
     }

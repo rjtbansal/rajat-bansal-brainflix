@@ -1,11 +1,10 @@
 import React from 'react';
 import './MainVideo.scss';
-import CommentList from '../CommentList/CommentList';
+// import MainVideoDetails from '../MainVideoDetails/MainVideoDetails';
 import playButtonIcon from '../../assets/Icons/SVG/Icon-play.svg';
 import fullScreenButtonIcon from '../../assets/Icons/SVG/Icon-fullscreen.svg';
 import volumeIcon from '../../assets/Icons/SVG/Icon-volume.svg';
-import viewsIcon from '../../assets/Icons/SVG/Icon-views.svg';
-import likesIcon from '../../assets/Icons/SVG/Icon-likes.svg';
+
 
 const MainVideo = props => {
     
@@ -24,6 +23,7 @@ const MainVideo = props => {
     };
 
     return (
+        <>
         <section className="main__video">
             <video className="main__video--image" poster={mainVideo.image}>
             </video>
@@ -38,26 +38,10 @@ const MainVideo = props => {
                     <img className="main__video--rightIcon" src={volumeIcon}  alt="play-button"/>
                 </div>
             </div>
-            <div className = "main__video--details">
-                <h1> {mainVideo.title} </h1>
-                <div className="main__video--div">
-                    <div className="main__video--subdiv">
-                        <h2 className = "main__video--author"> By {mainVideo.channel} </h2>
-                        <p className="main__video--timestamp"> {mainVideo.timestamp} </p>
-                    </div>
-                    <div className="main__video--subdiv">
-                        <img src={viewsIcon} alt="views-icon"/>
-                        <p className="main__video--figures"> {mainVideo.views} </p>
-                        <img className="likes-icon" src={likesIcon} alt="likes-icon"/>
-                        <p className="main__video--figures"> {mainVideo.likes} </p>
-                    </div>
-                </div>
-                <p className="main__video--description"> {mainVideo.description} </p>
-                <CommentList comments={mainVideo.comments} />
-            </div>
         </section>
+        {/* <MainVideoDetails mainVideo = {mainVideo} /> */}
+        </>
     );
-    
 }
 
 export default MainVideo;

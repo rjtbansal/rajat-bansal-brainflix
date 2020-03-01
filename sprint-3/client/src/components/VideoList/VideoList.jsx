@@ -3,6 +3,7 @@ import axios from 'axios';
 import './VideoList.scss';
 import Video from '../Video/Video';
 import MainVideo from '../MainVideo/MainVideo';
+import MainVideoDetails from '../MainVideoDetails/MainVideoDetails';
 
 class VideoList extends React.Component {
 
@@ -58,18 +59,21 @@ class VideoList extends React.Component {
         }
         return (
                 <>
-                    <div className = "main">
-                        <MainVideo key={this.state.mainVideo.id} video = {this.state.mainVideo} />
-                    </div>
-                    <div className="side-videos">
-                     <h4 className="side-videos__heading">NEXT VIDEO</h4>
-                    {
-                    this.state.videos
-                    .filter(video => video.id !== (this.props.match.params.id || this.defaultMainVideoId)) //avoiding first video from side videos
-                    .map( 
-                        video => <Video key={video.id} video={video} />
-                    )
-                    }
+                    {/* <div className = "main"> */}
+                    <MainVideo key={this.state.mainVideo.id} video = {this.state.mainVideo} />
+                    {/* </div> */}
+                    <div className="align-sidevideos-div">
+                        <MainVideoDetails mainVideo = {this.state.mainVideo} />
+                        <div className="side-videos">
+                            <h4 className="side-videos__heading">NEXT VIDEO</h4>
+                            {
+                            this.state.videos
+                            .filter(video => video.id !== (this.props.match.params.id || this.defaultMainVideoId)) //avoiding first video from side videos
+                            .map( 
+                                video => <Video key={video.id} video={video} />
+                            )
+                            }
+                        </div>
                     </div>
                 </>
         );

@@ -15,5 +15,21 @@
         @include tablet {
             margin-top: 2rem;
         }
+
+        @include desktop {
+            width: 40%;
+            margin-top: unset;
+        }
+    }
+
+    @include desktop {
+        border-left: 2px solid lightgray;
+    }
+}
+
+.align-sidevideos-div{
+
+    @include desktop {
+        display: flex;
     }
 }

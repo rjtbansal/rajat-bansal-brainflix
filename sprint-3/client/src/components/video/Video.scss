@@ -29,5 +29,9 @@
             width: 20%;
         }
 
+        @include desktop {
+            width: 40%;
+        }
+
     }
 }
